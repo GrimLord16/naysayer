@@ -50,11 +50,13 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
-
+.claude
+.databricks
 # Translations
 *.mo
 *.pot
-
+data
+models
 # Django stuff:
 *.log
 local_settings.py

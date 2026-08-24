@@ -1,0 +1,8 @@
+requests
+scikit-learn
+joblib
+numpy
+boto3
+fastapi
+uvicorn[standard]
+mlflow

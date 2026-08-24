@@ -1,0 +1,18 @@
+# Usage: docker compose -f docker-compose.yml -f docker-compose.databricks.yml up -d airflow api
+services:
+  airflow:
+    environment:
+      MLFLOW_TRACKING_URI: databricks
+      MLFLOW_REGISTRY_URI: databricks-uc
+      MLFLOW_EXPERIMENT: /Shared/naysayer-pipeline
+      NAYSAYER_REGISTERED_MODEL_NAME: workspace.naysayer.issue_label_classifier
+      DATABRICKS_HOST: ${DTB_URL}
+      DATABRICKS_TOKEN: ${DTB_TOKEN}
+
+  api:
+    environment:
+      MLFLOW_TRACKING_URI: databricks
+      MLFLOW_REGISTRY_URI: databricks-uc
+      NAYSAYER_REGISTERED_MODEL_NAME: workspace.naysayer.issue_label_classifier
+      DATABRICKS_HOST: ${DTB_URL}
+      DATABRICKS_TOKEN: ${DTB_TOKEN}
